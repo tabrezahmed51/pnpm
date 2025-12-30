@@ -51,7 +51,7 @@ jobs:
 
       - name: Setup pnpm
         if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 9
 
@@ -71,7 +71,7 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ${{ env.BUILD_PATH }}/dist
 
